@@ -22,10 +22,13 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Use Node.js 20.0
+      - name: Use Node.js 18.x
         uses: actions/setup-node@v3
         with:
-          node-version: '20.0' # Ensure Node.js 18.x is used
+          node-version: '18.x'
+
+      - name: Verify Node.js Version
+        run: node -v
 
       - name: Install Dependencies
         run: npm install
@@ -37,15 +40,12 @@ jobs:
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: 853ad28c18b3afd6e936722f11967556447d742e9637d719f181ce893b5002cf5-40f2120d-f899-4c23-9dcf-c6062ffa8641000240671
-          repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
-          # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/" # App source code path
-          api_location: "" # Api source code path - optional
-          output_location: "" # Built app content directory - optional
-          ###### End of Repository/Build Configurations ######
+          app_location: "/" # Adjust as needed
+          api_location: "" # Adjust as needed
+          output_location: "" # Adjust as needed
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
@@ -58,5 +58,5 @@ jobs:
         id: closepullrequest
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: 853ad28c18b3afd6e936722f11967556447d742e9637d719f181ce893b5002cf5-40f2120d-f899-4c23-9dcf-c6062ffa8641000240671
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           action: "close"
