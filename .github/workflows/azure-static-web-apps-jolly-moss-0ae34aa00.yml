@@ -22,11 +22,11 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Use Node.js 18.x
+      - name: Use Node.js 20.0
         uses: actions/setup-node@v3
         with:
-          node-version: '18.17.0'
-          
+          node-version: '20.0' # Ensure Node.js 18.x is used
+
       - name: Install Dependencies
         run: npm install
 
