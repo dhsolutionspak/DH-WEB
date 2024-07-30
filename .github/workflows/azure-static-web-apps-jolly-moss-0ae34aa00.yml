@@ -49,6 +49,7 @@ jobs:
           app_location: "/" # Adjust as needed
           api_location: "" # Adjust as needed
           output_location: "" # Adjust as needed
+          skip_deploy_on_missing_secrets: true
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
