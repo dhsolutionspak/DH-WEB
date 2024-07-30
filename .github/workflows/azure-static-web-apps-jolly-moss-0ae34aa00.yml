@@ -36,8 +36,8 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Reinstall Dependencies (Optional)
-        run: npm install
+      - name: Verify Build Output
+        run: ls -la .next
 
       - name: Build And Deploy
         id: builddeploy
