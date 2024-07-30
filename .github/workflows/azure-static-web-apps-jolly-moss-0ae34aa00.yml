@@ -1,66 +1,29 @@
-name: Azure Static Web Apps CI/CD
+name: Build and Deploy
 
 on:
   push:
     branches:
       - main
-  pull_request:
-    types: [opened, synchronize, reopened, closed]
-    branches:
-      - main
 
 jobs:
-  build_and_deploy_job:
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+  build_and_deploy:
     runs-on: ubuntu-latest
-    name: Build and Deploy Job
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: true
-          lfs: false
 
-      - name: Use Node.js 20.x
+      - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20.x'
 
-      - name: Verify Node.js Version
-        run: node -v
+      - name: Install apt-utils
+        run: sudo apt-get update && sudo apt-get install -y apt-utils
 
       - name: Install Dependencies
         run: npm install
 
-      - name: Build
+      - name: Build Project
         run: npm run build
 
-      - name: Verify Build Output
-        run: ls -la .next
-
-      - name: Build And Deploy
-        id: builddeploy
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: "upload"
-          app_location: "/" # Adjust as needed
-          api_location: "" # Adjust as needed
-          output_location: ".next" # Specify the correct build output directory
-          skip_deploy_on_missing_secrets: true
-
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE20: true
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
-          action: "close"
+      - name: Deploy
+        run: echo "Deploy steps here"
