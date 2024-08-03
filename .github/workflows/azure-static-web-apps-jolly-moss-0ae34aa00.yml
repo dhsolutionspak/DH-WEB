@@ -39,5 +39,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "/" # Adjust as needed
-          api_location: "" # Adjust as needed
-          output_location: ".next" # Specify the correct build output directory
+          output_location: ".next" # Or "out" if using static export
