@@ -34,14 +34,6 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                    <img src="https://dhsol.net/assets/imgs/template/dh-logo.svg" alt="Logo" />
                   </div>
                   </div>
-
-                    <div className="mobile-header-content-area">
-                        <div className="perfect-scroll">
-                            <div className="mobile-search mobile-header-border mb-30">
-                                <form action="#">
-                                    <input type="text" placeholder="Search for items…" /><i className="fi-rr-search" />
-                                </form>
-                            </div>
                             <div className="mobile-menu-wrap mobile-header-border">
                                 <nav>
                                     <ul className="mobile-menu font-heading">
