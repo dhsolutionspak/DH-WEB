@@ -29,14 +29,12 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                         <span className="burger-icon-mid" />
                         <span className="burger-icon-bottom" />
                     </div>
-                    <div className="mobile-header-top">
-                        <div className="user-account"><img src="/assets/imgs/page/homepage6/author.png" alt="Nivia" />
-                            <div className="content">
-                                <h6 className="user-name">John Smith</h6>
-                                <p className="font-xs text-muted">You have 4 new messages</p>
-                            </div>
-                        </div>
-                    </div>
+                   <div className="mobile-header-top">
+                   <div className="logo">
+                   <img src="https://dhsol.net/assets/imgs/template/dh-logo.svg" alt="Logo" />
+                  </div>
+                  </div>
+
                     <div className="mobile-header-content-area">
                         <div className="perfect-scroll">
                             <div className="mobile-search mobile-header-border mb-30">
