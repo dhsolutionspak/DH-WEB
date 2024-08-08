@@ -79,13 +79,7 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                                         </li>
                                         <li className={isActive.key == 3 ? "has-children active" : "has-children"}>
                                             <span className="menu-expand" onClick={() => handleToggle(3)}><i className="fi-rr-angle-small-down" /></span>
-
                                             <Link href="#">Blog</Link>
-                                            <ul className="sub-menu" style={{ display: `${isActive.key == 3 ? "block" : "none"}` }}>
-                                                <li><Link href="/blog">Blog V1</Link></li>
-                                                <li><Link href="/blog-2">Blog V2</Link></li>
-                                                <li><Link href="/blog-post">Blog post</Link></li>
-                                            </ul>
                                         </li>
                                         <li className={isActive.key == 4 ? "has-children active" : "has-children"}>
                                             <span className="menu-expand" onClick={() => handleToggle(4)}><i className="fi-rr-angle-small-down" /></span>
