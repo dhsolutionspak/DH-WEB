@@ -34,14 +34,8 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                    <img src="https://dhsol.net/assets/imgs/template/dh-logo.svg" alt="Logo" />
                   </div>
                   </div>
-                    <div className="mobile-menu-wrap mobile-header-border">
-                    <nav>
-                    <ul className="mobile-menu font-heading">
-                    <li><Link href="/">Home Page</Link></li>
-                    </ul>
-                    </nav>
-                    </div>
- 
+     <div>        
+  <nav>
                                         <li className={isActive.key == 2 ? "has-children active" : "has-children"}>
                                             <span className="menu-expand" onClick={() => handleToggle(2)}><i className="fi-rr-angle-small-down" /></span>
 
