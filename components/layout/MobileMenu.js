@@ -34,29 +34,14 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                    <img src="https://dhsol.net/assets/imgs/template/dh-logo.svg" alt="Logo" />
                   </div>
                   </div>
-
-                    <div className="mobile-header-content-area">
-                        <div className="perfect-scroll">
-                            <div className="mobile-search mobile-header-border mb-30">
-                                <form action="#">
-                                    <input type="text" placeholder="Search for items…" /><i className="fi-rr-search" />
-                                </form>
-                            </div>
-                            <div className="mobile-menu-wrap mobile-header-border">
-                                <nav>
-                                    <ul className="mobile-menu font-heading">
-                                        <li className={isActive.key == 1 ? "has-children active" : "has-children"}>
-                                            <span className="menu-expand" onClick={() => handleToggle(1)}><i className="fi-rr-angle-small-down" /></span>
-                                            <Link className="active" href="/">Home Pages</Link>
-                                            <ul className="sub-menu" style={{ display: `${isActive.key == 1 ? "block" : "none"}` }}>
-                                                <li><Link href="/">Business Solutions</Link></li>
-                                                <li><Link href="/index-2">Marketing App</Link></li>
-                                                <li><Link href="/index-3">Web Agency</Link></li>
-                                                <li><Link href="/index-4">Digital Agency</Link></li>
-                                                <li><Link href="/index-5">3D Products</Link></li>
-                                                <li><Link href="/index-6">AI Platform</Link></li>
-                                            </ul>
-                                        </li>
+                    <div className="mobile-menu-wrap mobile-header-border">
+                    <nav>
+                    <ul className="mobile-menu font-heading">
+                    <li><Link href="/">Home Page</Link></li>
+                    </ul>
+                    </nav>
+                    </div>
+ 
                                         <li className={isActive.key == 2 ? "has-children active" : "has-children"}>
                                             <span className="menu-expand" onClick={() => handleToggle(2)}><i className="fi-rr-angle-small-down" /></span>
 
