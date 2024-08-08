@@ -98,22 +98,11 @@ export default function MobileMenu({ isMobileMenu, handleMobileMenu }) {
                                     </ul>
                                 </nav>
                             </div>
-                            <div className="mobile-account">
-                                <h6 className="mb-10">Your Account</h6>
-                                <ul className="mobile-menu font-heading">
-                                    <li><Link href="#">Profile</Link></li>
-                                    <li><Link href="#">Work Preferences</Link></li>
-                                    <li><Link href="#">My Boosted Shots</Link></li>
-                                    <li><Link href="#">My Collections</Link></li>
-                                    <li><Link href="#">Account Settings</Link></li>
-                                    <li><Link href="#">Go Pro</Link></li>
-                                    <li><Link href="/login">Sign Out</Link></li>
-                                </ul>
-                            </div>
+                           
                             <div className="mobile-social-icon mb-50">
                                 <h6 className="mb-25">Follow Us</h6><Link className="icon-socials icon-facebook" href="#"><img alt="Nivia" src="/assets/imgs/template/icons/fb.svg" /></Link><Link className="icon-socials icon-instagram" href="#"><img alt="Nivia" src="/assets/imgs/template/icons/in.svg" /></Link><Link className="icon-socials icon-twitter" href="#"><img alt="Nivia" src="/assets/imgs/template/icons/tw.svg" /></Link><Link className="icon-socials icon-be" href="#"><img alt="Nivia" src="/assets/imgs/template/icons/be.svg" /></Link>
                             </div>
-                            <div className="site-copyright">Copyright 2023 © Nivia.<br />Designed by AliThemes.</div>
+                            <div className="site-copyright">Copyright 2024 © DH Solutions LLC <br />All Rights are Reserved.</div>
                         </div>
                     </div>
                 </div>
